@@ -1,0 +1,58 @@
+<div class="items-contents">
+
+  <div class="items-main">
+    <h2 class="items-title">投稿情報を入力</h2>
+    <%= form_with(model: @item, local: true) do |f| %>
+
+    
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        投稿画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+    
+    
+    <div class="new-items">
+      <div class="weight-bold-text">
+        商品名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field  :name, class:"items-text", id:"item-name", placeholder:"商品名", maxlength:"40" %>
+
+      <div class="form">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+      </div>
+
+      <div class="weight-bold-text">
+        ブランド名
+      </div>
+      <%= f.text_field  :brand, class:"items-text", id:"item-name", placeholder:"ブランド名", maxlength:"40" %>
+
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          商品の説明
+        </div>
+        <%= f.text_area :information, size: "20x5", class:"items-text", id:"item-info", placeholder:"商品の説明", maxlength:"1000" %>
+      </div>
+    </div>
+  
+    <div class="btn-contents">
+      <%= f.submit "投稿する" ,class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
