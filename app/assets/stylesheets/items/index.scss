@@ -1,0 +1,26 @@
+
+.title-contents {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('Old_2.jpeg');
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.site-title {
+  font-size: 9vh;
+}
+
+.what-site {
+  font-size: 4vh;
+}
