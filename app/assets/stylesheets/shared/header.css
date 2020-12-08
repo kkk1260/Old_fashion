@@ -1,0 +1,36 @@
+
+
+header {
+  background-color: #797a64;
+}
+
+.top-page-header {
+  width: 100vw;
+  height: 12vh;
+  padding: 3vh 2vw;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.title-icon {
+  width: 15vw;
+}
+
+.nav {
+  display: flex;
+}
+
+.lists-left {
+  display: flex;
+}
+
+.nav-icon {
+  width: 15vw;
+}
+
+
+.lists-right {
+  display: flex;
+}
+
