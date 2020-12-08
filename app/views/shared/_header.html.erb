@@ -1,0 +1,19 @@
+<header class='top-page-header'>
+  <div class='application-title'>
+   <%= link_to image_tag("Old_01.png", class:"title-icon"), "/" %>
+  </div>
+  <div class= 'nav'>
+    <ul class='lists-left'>
+      <li><%= link_to image_tag("Old_03.png", class:"nav-icon"), "/" %></li>
+      <li><%= link_to image_tag("Old_02.png", class:"nav-icon"), "/" %></li>
+    </ul>
+    <ul class= 'lists-right'>
+       <% if user_signed_in? %>
+        <li><%= link_to image_tag("Old_06.png", class:"nav-icon"), destroy_user_session_path, method: :delete%></li>
+        <li><%= link_to image_tag("Old_07.png", class:"nav-icon"), "/" %></li>
+      <% else %>
+        <li><%= link_to image_tag("Old_04.png", class:"nav-icon"), new_user_session_path %></li>
+        <li><%= link_to image_tag("Old_05.png", class:"nav-icon"), new_user_registration_path %></li>
+      <% end %>
+    </ul>
+</header>
