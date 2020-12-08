@@ -7,8 +7,6 @@
 | nickname           | string    | null: false  |
 | email              | string    | unique: true |
 | encrypted_password | string    | null: false  |
-| birthday           | date      | null: false  |
-| introduction       | text      |              |
 
 ### Association
 
