@@ -1,9 +1,17 @@
 <%= render "shared/header" %>
 
 <div class='title-contents'>
-  <h2 class='service-title'>
-    Enjoy yourself.
+  <h2 class='site-title'>
+    Old fashion
   </h2>
+  <p class='what-site'>古着専用の写真投稿サイト</p>
 </div>
 
-<%= render "shared/footer" %>
+<%# 仮置き %>
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+  <%= image_tag 'camera_icon.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+<%# 仮置き %>
+
+<%# <%= render "shared/footer" %> 

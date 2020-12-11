@@ -19,10 +19,9 @@
 | Column             | Type       | Options           |
 | ------------------ | ---------- | ------------------|
 | name               | string     | null: false       |
-| price              | integer    |                   |
-| information        | string     |                   |
+| information        | text       |                   |
 | category_id        | integer    | null: false       |
-| brand              |            |                   |
+| brand              | string     |                   |
 | user               | references | foreign_key: true |
 
 ### Association
