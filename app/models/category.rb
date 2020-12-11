@@ -9,9 +9,9 @@ class Category < ActiveHash::Base
     { id: 7, name: 'スーツ' },
     { id: 8, name: '帽子' },
     { id: 9, name: 'アクセサリー' },
-    { id: 10, name: '小物' },
+    { id: 10, name: '小物' }
   ]
 
   include ActiveHash::Associations
   has_many :items
-  end
+end

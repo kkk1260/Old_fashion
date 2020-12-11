@@ -12,5 +12,11 @@ class Item < ApplicationRecord
 
   validates :category_id, numericality: { other_than: 1 }
 
-
+  def self.search(search)
+    if search != ""
+      Item.where('text LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 end

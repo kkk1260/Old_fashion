@@ -2,10 +2,12 @@
 
 header {
   background-color: #797a64;
+  opacity: 0.9;
+  position: fixed;
 }
 
 .top-page-header {
-  width: 100vw;
+  width: 100%;
   height: 12vh;
   padding: 3vh 2vw;
   display: flex;
