@@ -1,0 +1,26 @@
+.contents {
+}
+
+.mypage-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mypage-profile {
+  display: flex;
+  border-bottom: 2px solid rgb(172, 56, 56);
+  width: 100vh;
+  padding: 80px;
+  background-color: blue;
+}
+
+.profile-image {
+  padding: 20px;
+  background-color: rgb(172, 56, 56);
+}
+
+.profile-contents {
+  background-color: yellow;
+}

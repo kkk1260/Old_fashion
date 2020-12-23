@@ -1,0 +1,23 @@
+<div class = contents >
+  <div class = mypage-contents>
+    <div class = mypage-profile >
+      <div class = profile-image >
+      かきくけこ
+      </div>
+      <div class = profile-contents>
+      かきくけこ
+      </div>
+    </div>
+    <div class = contents-row >
+      <ul class='item-lists'>
+        <% @items.each do |item| %>
+              <li class='list'>
+                  <%= link_to item_path(item.id), method: :get do %>
+                    <%= image_tag(item.image, class:"item-img") %>
+                  <% end %>
+              </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,30 +1,30 @@
-.item-contents {
-  background-color: rgba(210, 212, 209, 0.658);
-}
 
 .search-form {
   box-sizing: border-box;
   padding-top: 150px;
-  padding-bottom: 15px;
+  padding-bottom: 50px;
   text-align: center;
 }
 
 .search-form .search-input {
   border: 1px solid #999;
   padding: 3px 5px;
-  border-radius: 20px;
+  border-radius: 10px;
   height: 2.0em;
-  width: 245px;
+  width: 300px;
   overflow: hidden;
 }
 
 .search-form .search-btn {
   cursor: pointer;
+  width: 100px;
+  border-radius: 15px;
+  color:#fff;
+  background-color:#486141;
 }
 
 .contents-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
@@ -32,8 +32,10 @@
 }
 
 .item-lists {
-  margin: 5px;
-}
+  column-count: 3;
+  column-gap: 15px;
+  column-fill: auto;
+ }
 
 .list {
   width:25vw;
@@ -44,19 +46,10 @@
   height: auto;
   border-radius: 30px;
   vertical-align: bottom;
+  margin: 5px;
+  box-shadow: 1px 1px 1px rgb(7, 7, 7);
 }
 
-// .item-lists {
-//   display: -webkit-flex;
-//   display: flex;
-//   -webkit-flex-direction: column;
-//   flex-direction: column;
-//   -webkit-flex-wrap: wrap;
-//   flex-wrap: wrap;
-//   height: 100vw; /* ビューポート(幅)を基準に表示高を指定 */
-// }
 
-// .list {
-//   width: 30%;
-// }
+
 

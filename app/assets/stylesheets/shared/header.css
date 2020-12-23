@@ -1,9 +1,8 @@
-
-
 header {
   background-color: #797a64;
   opacity: 0.9;
   position: fixed;
+  z-index: 9999;
 }
 
 .top-page-header {
@@ -29,8 +28,13 @@ header {
 
 .nav-icon {
   width: 15vw;
+  border-radius: 30px;
 }
 
+.nav-icon:hover {
+  box-shadow: 0 3px 5px rgb(91, 94, 92);
+  transform: translate(0, -5px);
+}
 
 .lists-right {
   display: flex;

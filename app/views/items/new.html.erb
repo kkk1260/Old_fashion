@@ -23,10 +23,10 @@
     
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        タイトル
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_field  :name, class:"items-text", id:"item-name", placeholder:"商品名", maxlength:"40" %>
+      <%= f.text_field  :title, class:"items-text", id:"item-name", placeholder:"アイテムやコーデの名前など", maxlength:"40" %>
 
       <div class="form">
         <div class="weight-bold-text">
@@ -43,9 +43,9 @@
 
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          アイテム、コーデについて
         </div>
-        <%= f.text_area :information, size: "20x5", class:"items-text", id:"item-info", placeholder:"商品の説明", maxlength:"1000" %>
+        <%= f.text_area :information, size: "20x5", class:"items-text", id:"item-info", placeholder:"どんなアイテムか？、どんなコーデか？", maxlength:"1000" %>
       </div>
     </div>
   
