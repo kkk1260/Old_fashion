@@ -1,0 +1,52 @@
+<div class="items-profile-contents">
+
+  <div class="items-main">
+    <h2 class="items-title"> アカウント情報編集</h2>
+    <%= form_with(model: @profile, local: true) do |f| %>
+
+    
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        プロフィール画像
+      </div>
+      <div class="click-upload">
+      <%# 投稿写真選択 %>
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"user-image" %>
+      </div>
+    </div>
+    
+    
+    <div class="new-items">
+      <div class="weight-bold-text">
+        名前
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :name, class:"input-default", id:"nickname", placeholder:"例) 山田太郎" %>
+
+      <%# <div class="form"> %>
+        <%# <div class="weight-bold-text"> %>
+          <%# メールアドレス %>
+        <%# </div> %>
+            <%# <%= f.email_field :email, class:"input-default", id:"email", placeholder:"sample@co.jp", autofocus: true %> 
+      <%# </div> %>
+
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          自己紹介
+        </div>
+        <%= f.text_area :self_introduction, size: "20x5", class:"user-profile-box", id:"item-info", maxlength:"1000" %>
+      </div>
+    </div>
+  
+    <div class="btn-contents">
+      <%= f.submit "変更する" ,class:"edit-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>

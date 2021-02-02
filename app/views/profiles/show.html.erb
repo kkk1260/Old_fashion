@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+
+<div class = contents >
+  <div class = user-contents>
+    <div class = user-profile >
+      <div class = user-profile-left >
+        <div class = profile-image>
+        <% if @image.present? %>
+        <%= image_tag(@image, :size => '180x180', class:"profile-img") %>
+        <% else %>
+        <span class= 'image-text' >NO IMAGE</span>
+        <% end %>
+        </div>
+      </div>
+      <div class = user-profile-right>
+        <div class = profile-contents-top>
+          <div class = user-name >
+            <%= @profile.name %>
+          </div>
+          <div class = profile-option>
+            <div class = profile-option-btn >
+            <%= link_to(edit_profile_path, class: 'option-btn') do %>
+            <%= image_tag 'gear_icon.png' ,class: "profile-btn-icon" %>
+            <% end %>
+            </div >
+          </div>
+        </div>
+        <div class = profile-contents-row >
+          <div class = profile-bio >
+          <%# ここに自己紹介文 %>
+          <%= @profile.self_introduction%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = user-post-contents >
+      <ul class='item-lists'>
+        <% @items.each do |item| %>
+              <li class='list'>
+                  <%= link_to item_path(item.id), method: :get do %>
+                    <%= image_tag(item.image, class:"item-img") %>
+                  <% end %>
+              </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
+    
   end
 
   def new
@@ -32,7 +33,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:image, :title, :category_id, :information, :brand).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :title, :category_id, :information, :brand).merge(user_id: current_user.id, profile_id: current_user.profile.id)
   end
 
   def set_item

@@ -4,7 +4,6 @@
 
 | Column             | Type      | Options      |
 | ------------------ | --------- | -------------|
-| nickname           | string    | null: false  |
 | email              | string    | unique: true |
 | encrypted_password | string    | null: false  |
 
@@ -13,6 +12,17 @@
 - has_many :items
 - has_many :comments
 - has_many :likes
+
+# profileテーブル
+
+| Column             | Type      | Options      |
+| ------------------ | --------- | -------------|
+| name               | string    |
+| encrypted_password | string    | null: false  |
+
+### Association
+
+- belongs_to :user
 
 # itemsテーブル
 
@@ -52,3 +62,10 @@
 
 - belongs_to :user
 - belongs_tp :item
+
+
+# 各種機能&導入技術
+• エラー文の日本語変換(rails-i18n)
+• テスト（Rspec,Capybara,factory_bot）
+• 画像アップロード (active_storage,mini_magick,image_processing)
+• 

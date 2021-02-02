@@ -1,0 +1,87 @@
+
+.user-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+.user-profile {
+  display: flex;
+  border-bottom: 2px solid rgba(90, 94, 90, 0.486);
+  width: 100vh;
+  padding-bottom: 20px;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+  background-color: rgb(129, 155, 129);
+  position: relative;
+}
+
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 100px;
+}
+
+// プロフィール写真なかったら適用
+.image-text {
+  position: absolute;
+  top: 80px;
+  left: 50px;
+  color: rgb(245, 252, 245);
+}
+// 
+
+.user-profile-right {
+  padding-left: 30px;
+  width: 500px;
+}
+
+.profile-contents-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-name {
+  font-size: 30px;
+  color: rgb(74, 87, 74);
+  padding-top: 10px;
+}
+
+.profile-option {
+  background-color:  rgb(129, 155, 129);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin-top: 15px;
+}
+
+
+.profile-btn-icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 20px;
+}
+
+.profile-bio {
+  padding-top: 2em;
+  padding-right: 4em;
+  font-weight: normal;
+  color: rgb(74, 87, 74);
+}
+
+.user-post-contents {
+  padding-top: 30px;
+}
+
+.item-img:hover {
+  opacity: 0.6; 
+  filter: brightness(90%);
+}

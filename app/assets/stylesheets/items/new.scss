@@ -1,3 +1,4 @@
+//  投稿画面
 
 .items-contents {
   background-image: image-url('Old_5.jpeg');
@@ -13,6 +14,26 @@
   justify-content: center;
   color: white;
 }
+
+///
+
+//  アカウント情報登録、編集画面
+
+.items-profile-contents {
+  background-image: image-url('Old_12.jpeg');
+  background-color:rgba(255,255,255,0.3);
+  background-blend-mode:lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  width: 100vw;
+  height: 120vh;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+///
 
 .items-main {
   background-color: #797a64;
@@ -116,3 +137,28 @@
   border-radius: 30px;
 }
 
+/// 投稿画面
+
+// アカウント情報編集
+.user-profile-box {
+  width: 100%;
+  padding: 20px 20px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 5px;
+}
+
+.edit-btn {
+  width: 100%;
+  background: #066306;
+  border: 1px solid #066306;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius:30px;
+  margin: 2vh 0;
+}
+/// アカウント情報編集

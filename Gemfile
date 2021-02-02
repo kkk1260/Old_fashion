@@ -58,13 +58,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # "ここから下追加したGem"
 
-group :development do
-  gem 'rubocop', require: false
-end
+# 画像アップロード
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
-group :production do
-  gem 'rails_12factor'
-end
+# 日本語変換
+gem 'rails-i18n'
 
 gem 'active_hash'
 
@@ -73,13 +72,6 @@ gem 'devise'
 gem 'pry-rails'
 
 gem 'faker'
-
-gem 'factory_bot_rails'
-
-gem 'mini_magick'
-gem 'image_processing', '~> 1.2'
-
-gem 'active_hash'
 
 gem 'payjp'
 
