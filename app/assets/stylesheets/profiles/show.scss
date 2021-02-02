@@ -14,7 +14,7 @@
   padding-bottom: 20px;
 }
 
-.profile-image {
+.profile-icon {
   width: 180px;
   height: 180px;
   border-radius: 100px;
@@ -22,10 +22,11 @@
   position: relative;
 }
 
-.profile-img {
+.profile-image {
   width: 180px;
   height: 180px;
   border-radius: 100px;
+  object-fit: cover;
 }
 
 // プロフィール写真なかったら適用
@@ -81,7 +82,7 @@
   padding-top: 30px;
 }
 
-.item-img:hover {
+.post-image:hover {
   opacity: 0.6; 
   filter: brightness(90%);
 }

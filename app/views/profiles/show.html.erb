@@ -4,9 +4,9 @@
   <div class = user-contents>
     <div class = user-profile >
       <div class = user-profile-left >
-        <div class = profile-image>
+        <div class = profile-icon>
         <% if @image.present? %>
-        <%= image_tag(@image, :size => '180x180', class:"profile-img") %>
+        <%= image_tag(@image, :size => '180x180', class:"profile-image") %>
         <% else %>
         <span class= 'image-text' >NO IMAGE</span>
         <% end %>
@@ -38,7 +38,7 @@
         <% @items.each do |item| %>
               <li class='list'>
                   <%= link_to item_path(item.id), method: :get do %>
-                    <%= image_tag(item.image, class:"item-img") %>
+                    <%= image_tag(item.image, class:"post-image") %>
                   <% end %>
               </li>
         <% end %>
