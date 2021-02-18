@@ -2,34 +2,66 @@
 
 <div class='item-contents'>
   <div class = 'details'>
-    <div class= 'details-column'>
+
+
+    <div class= 'details-column' >
+
       <div class= 'image-field'>
         <%= image_tag(@item.image, class:"image-content") %>
       </div>
+
       <div class = 'item-body'>
         <div class = 'item-body-contents'>
+
+          <div class= 'item-profile'>
+            <div class= 'item-profile-icon'>
+              <% if @profile.image.present? %>
+              <%= link_to image_tag(@profile.image, class:"mini-image"), "/profiles/#{@profile.id}/show_user" %>
+              <% else %>
+              <span class= 'image-text' >NO IMAGE</span>
+              <% end %>
+            </div>
+            <div class= 'item-profile-name'>
+              <p class= 'mini-name'>
+              <%= @profile.name%>
+              </p>
+            </div>
+            <div class = 'item-option'>
+              <div class = 'item-option-btn' >
+                <%= link_to(edit_item_path, class: 'option-btn') do %>
+                <%= image_tag 'gear_icon.png' ,class: 'item-btn-icon' %>
+                <% end %>
+              </div >
+            </div>
+          </div>
+          
           <div class = 'item-detail'>
             <p class = 'detail-title'>Title</p>
             <p class = 'detail-message'>
             <%= @item.title %>
             </p>
           </div>
+
           <div class = 'item-detail'>
             <p class = 'detail-title'>Category</p>
             <p class = 'detail-message'>
             <%= @item.category.name %>
             </p>
           </div>
-          <div class = 'item-detail'>
-            <p class = 'detail-title'>Brand</p>
-            <p class = 'detail-message'>
-            <% unless @item.brand.empty? %>
-            <%= @item.brand %>
+
+          <div class = 'item-detail-tag'>
+            <p class = 'detail-title-tag'>Tag</p>
+            <p class = 'detail-message-tag'>
+            <% unless @item_tags.empty? %>
+            <%@item_tags.each do |tag| %>
+              #<%=tag.tag_name%>
+            <%end%>
             <% else %>
             未記入
             <% end %>
             </p>
           </div>
+
           <div class = 'item-information'>
             <p class = 'detail-title'>Information</p>
             <p class = 'detail-message'>
@@ -40,8 +72,11 @@
             <% end %>
             </p>
           </div>
+
         </div>
       </div>
     </div>
+
+
   </div>
 </div>

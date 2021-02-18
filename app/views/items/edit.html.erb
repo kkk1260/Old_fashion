@@ -1,7 +1,7 @@
 <div class="items-contents">
 
   <div class="items-main">
-    <h2 class="items-title">投稿情報を入力</h2>
+    <h2 class="items-title">投稿情報を編集</h2>
     <%= form_with(model: @item, local: true) do |f| %>
     
       <%= render 'shared/error_messages', model: f.object %>
@@ -20,7 +20,6 @@
         </div>
       </div>
       <div id="image-list"></div>
-      
       
       <div class="new-items">
         <div class="weight-bold-text">
@@ -41,7 +40,7 @@
           タグ<br>
           (半角スペースを入力することでタグをつけることができます)
         </div>
-        <%= f.text_field  :tag_name, class:"items-text", id:"item-name", placeholder:"(例)ストリート系 きれいめ モード など", maxlength:"40" %>
+        <%= f.text_field  :tag_name, class:"items-text", id:"item-name", placeholder:"(例)ストリート系 きれいめ モード など", maxlength:"40", value: @item_tags%>
   
         <div class="items-explain">
           <div class="weight-bold-text">

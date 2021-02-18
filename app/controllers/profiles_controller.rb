@@ -1,9 +1,14 @@
 class ProfilesController < ApplicationController
-  before_action :find_profile, only: [:show, :edit, :update]
+  before_action :find_profile, only: [:show, :edit, :update, :show_user]
 
   def show
-    @items             = current_user.items
-    @image             = @profile.image
+    @items  = current_user.items
+    @image  = @profile.image
+  end
+
+  def show_user
+    @image  = @profile.image
+    @items  = @profile.items
   end
 
   def new 
@@ -14,7 +19,6 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
     @profile.user = current_user
     if @profile.save
       redirect_to root_path, notice: "プロフィール情報の登録が完了しました" 
