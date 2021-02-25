@@ -17,13 +17,18 @@
           <div class = user-name >
             <%= @profile.name %>
           </div>
-          <div class = profile-option>
-            <div class = profile-option-btn >
-            <%= link_to(edit_profile_path, class: 'option-btn') do %>
-            <%= image_tag 'gear_icon.png' ,class: "profile-btn-icon" %>
-            <% end %>
-            </div >
-          </div>
+          
+          <% if @profile.user_id == current_user.id %>
+            <div class = profile-option>
+              <div class = profile-option-btn >
+              <%= link_to(edit_profile_path, class: 'option-btn') do %>
+              <%= image_tag 'gear_icon.png' ,class: "profile-btn-icon" %>
+              <% end %>
+              </div >
+            </div>
+          <% end %>
+          
+          
         </div>
         <div class = profile-contents-row >
           <div class = profile-bio >

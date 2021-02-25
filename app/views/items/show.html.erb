@@ -3,7 +3,6 @@
 <div class='item-contents'>
   <div class = 'details'>
 
-
     <div class= 'details-column' >
 
       <div class= 'image-field'>
@@ -26,13 +25,17 @@
               <%= @profile.name%>
               </p>
             </div>
-            <div class = 'item-option'>
-              <div class = 'item-option-btn' >
-                <%= link_to(edit_item_path, class: 'option-btn') do %>
-                <%= image_tag 'gear_icon.png' ,class: 'item-btn-icon' %>
-                <% end %>
-              </div >
-            </div>
+            
+            <% if @item.user_id == current_user.id %>
+              <div class = 'item-option'>
+                  <div class = 'item-option-btn' >
+                    <%= link_to(edit_item_path, class: 'option-btn') do %>
+                    <%= image_tag 'gear_icon.png' ,class: 'item-btn-icon' %>
+                    <% end %>
+                  </div >
+              </div>
+            <% end %>
+
           </div>
           
           <div class = 'item-detail'>

@@ -1,11 +1,94 @@
 <%= render "shared/header" %>
 
-<div class='title-contents'>
-  <h2 class='site-title'>
-    Old fashion
-  </h2>
-  <p class='what-site'>古着専用の写真投稿サイト</p>
-</div>
+<% unless user_signed_in? %>
+  <div class='title-contents'>
+    <h2 class='site-title'>
+      Old fashion
+    </h2>
+    <p class='what-site'>古着専用の写真投稿サイト</p>
+  </div>
+<% else %>
+  <% @items.each do |item| %>
+  <div class='item-contents'>
+    <div class = 'timeline'>
+      <div class = 'timeline-column'>
+        <div class = 'image-field'>
+          <%= image_tag(item.image , class:'timeline-image') %>
+        </div>
+  
+        <div class = 'item-body'>
+          <div class = 'item-body-contents'>
+  
+            <div class= 'item-profile'>
+              <div class= 'item-profile-icon'>
+              <% if item.profile.image.present? %>
+              <%= link_to image_tag(item.profile.image, class:'mini-image') , "/profiles/#{item.profile.id}/show_user" %>
+              <% else %>
+              <span class= 'image-text' >NO IMAGE</span>
+              <% end %>
+              </div>
+              <div class= 'item-profile-name'>
+                <p class= 'mini-name'>
+                <%= item.profile.name %>
+                </p>
+              </div>
+              <% if item.user_id == current_user.id %>
+                <div class = 'item-option'>
+                    <div class = 'item-option-btn' >
+                      <%= link_to('#', class: 'option-btn') do%>
+                      <%= image_tag 'gear_icon.png' ,class: 'item-btn-icon'%>
+                      <% end %>
+                    </div >
+                </div>
+              <% end %>
+            </div>
+            
+            <div class = 'item-detail'>
+              <p class = 'detail-title'>Title</p>
+              <p class = 'detail-message'>
+              <%= item.title %>
+              </p>
+            </div>
+  
+            <div class = 'item-detail'>
+              <p class = 'detail-title'>Category</p>
+              <p class = 'detail-message'>
+              <%= item.category.name %>
+              </p>
+            </div>
+  
+            <div class = 'item-detail-tag'>
+              <p class = 'detail-title-tag'>Tag</p>
+              <p class = 'detail-message-tag'>
+              <% unless item.tags.empty? %>
+              <% item.tags.each do |tag| %>
+                #<%=tag.tag_name %>
+              <%end %>
+              <% else %>
+              未記入
+              <% end %>
+              </p>
+            </div>
+  
+            <div class = 'item-information'>
+              <p class = 'detail-title'>Information</p>
+              <p class = 'detail-message'>
+              <% unless item.information.empty? %>
+              <%= item.information %>
+              <% else %>
+              未記入
+              <% end %>
+              </p>
+            </div>
+  
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
 
 <%= render "shared/post_btn" %>
 

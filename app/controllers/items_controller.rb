@@ -3,9 +3,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @tag_list = Tag.all
     @items = Item.all
-    
+    @tag_lists = Tag.all
   end
 
   def new
@@ -23,6 +22,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    @item = Item.new(item_params)
     tag_list = params[:item][:tag_name].split(nil)  
     if @item.save
       @item.save_tag(tag_list)
